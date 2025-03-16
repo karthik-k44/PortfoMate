@@ -20,6 +20,7 @@ export const Login = () => {
     try {
       const { data } = await axios.post('http://localhost:3000/api/login', userdata);
       console.log(data.message);
+      alert(data.message)
       localStorage.setItem('token', data.token);
     } catch (error) {
       if (error.response) {
