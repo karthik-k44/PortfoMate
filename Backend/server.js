@@ -1,17 +1,17 @@
-import express from "express"
-import connectDb from "./config/database.js"
-import authRouter from "./routes/authRoutes.js "
+import express from "express";
+import cors from "cors";
+import connectDb from "./config/database.js";
+import authRouter from "./routes/authRoutes.js";
 
-const app= express()
+const app = express();
 
-app.use(express.json())
+app.use(cors()); // Enable CORS
+app.use(express.json());
 
-connectDb()
+connectDb();
 
+app.use("/api", authRouter);
 
-app.use("/api", authRouter)
-
-app.listen(3000, ()=>
-{
-    console.log("App running at port 3000")
-})
+app.listen(3000, () => {
+  console.log("App running at port 3000");
+});

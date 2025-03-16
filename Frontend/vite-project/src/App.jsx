@@ -5,8 +5,8 @@ import { About } from "./pages/About";
 import { CreateResume } from "./pages/CreateResume";
 import { Profile } from "./pages/Profile";
 import LandingPage from "./LandingPage/LandingPage";
-import { LogIn } from "lucide-react";
 import { Signin } from "./Authentication/Signin";
+import { Login } from "./Authentication/Login";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/createResume" element={<CreateResume />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<LogIn/>} />
+          <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signin/>} />
         </Routes>
       </Router>
